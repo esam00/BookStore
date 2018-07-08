@@ -30,4 +30,6 @@
 
     <!-- Label for supplier name in the editor [CHAR LIMIT=30] -->
     <string name="hint_supplier_name">Name</string>
+    <string name="error_saving_book">Error with saving book</string>
+    <string name="book_saved_successfully">book saved with row id:</string>
 </resources>

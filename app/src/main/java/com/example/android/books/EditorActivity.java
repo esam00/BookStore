@@ -82,10 +82,10 @@ public class EditorActivity extends AppCompatActivity {
         // Show a toast message depending on whether or not the insertion was successful
         if (newRowId == -1) {
             // If the row ID is -1, then there was an error with insertion.
-            Toast.makeText(this, "Error with saving book", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.error_saving_book, Toast.LENGTH_SHORT).show();
         } else {
             // Otherwise, the insertion was successful and we can display a toast with the row ID.
-            Toast.makeText(this, "book saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.book_saved_successfully) + newRowId, Toast.LENGTH_SHORT).show();
         }
     }
 
