@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BookStore</string>
+
+    <!-- Title for the activity to add a new book [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_book">Add a book</string>
+
+    <!-- Label for editor menu option to save book and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="category_overview">Overview</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_book_name">Name</string>
+
+    <!-- Text hint for price field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_book_price">Price</string>
+
+    <!-- Text units for price field in the editor ($)[CHAR LIMIT=30] -->
+    <string name="units_book_price">$</string>
+
+    <!-- Text hint for quantity field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_book_quantity">Quantity</string>
+
+    <!-- Label for supplier information in the editor [CHAR LIMIT=30] -->
+    <string name="supplier_info">Supplier</string>
+
+    <!-- Label for supplier phone number in the editor [CHAR LIMIT=30] -->
+    <string name="hint_supplier_number">Phone Number</string>
+
+    <!-- Label for supplier name in the editor [CHAR LIMIT=30] -->
+    <string name="hint_supplier_name">Name</string>
+</resources>
