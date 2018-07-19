@@ -16,7 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".EditorActivity"
-            android:label="@string/editor_activity_title_new_book"
             android:theme="@style/EditorTheme"
             android:parentActivityName=".CatalogActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -24,6 +23,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CatalogActivity" />
         </activity>
+        <provider
+            android:authorities="com.example.android.books"
+            android:name=".data.BookProvider"
+            android:exported="false"
+            />
     </application>
 
 </manifest>
