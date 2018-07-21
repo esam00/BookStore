@@ -2,7 +2,7 @@
     <string name="app_name">BookStore</string>
 
     <!-- Label for overflow menu option that inserts fake book data into the app [CHAR LIMIT=20] -->
-    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+    <string name="action_insert_dummy_data">Insert book sample </string>
 
     <!-- Label for overflow menu option that deletes all book data in the app [CHAR LIMIT=20] -->
     <string name="action_delete_all_entries">Delete All books</string>
@@ -36,6 +36,9 @@
 
     <!-- Text units for price field in the editor ($)[CHAR LIMIT=30] -->
     <string name="units_book_price">$</string>
+
+    <!-- Text units for quantity field in the editor ($)[CHAR LIMIT=30] -->
+    <string name="units_book_quantity">book</string>
 
     <!-- Text hint for quantity field in the editor [CHAR LIMIT=30] -->
     <string name="hint_book_quantity">Quantity</string>
@@ -91,8 +94,10 @@
 
     <!-- Label for supplier name in the editor [CHAR LIMIT=30] -->
     <string name="hint_supplier_name">Name</string>
+
     <string name="error_saving_book">Error with saving book</string>
     <string name="book_saved_successfully">book saved successfully</string>
     <string name="unknown_category">Unknown category</string>
     <string name="delete_all_books_dialog_msg">Are you sure you want to delete all books?</string>
+    <string name="sale">sale</string>
 </resources>

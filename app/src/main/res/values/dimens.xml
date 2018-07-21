@@ -5,4 +5,14 @@
 
     <!-- Common margin value used throughout the app -->
     <dimen name="activity_margin">16dp</dimen>
+
+    <dimen name="small_padding">5dp</dimen>
+
+    <!-- width and height of the quantity background circle  -->
+    <dimen name="quantity_circle_width">50dp</dimen>
+    <dimen name="quantity_circle_height">50dp</dimen>
+
+    <!-- width and height of icon call for supplier number field   -->
+    <dimen name="ic_call_width">38dp</dimen>
+    <dimen name="ic_call_height">38dp</dimen>
 </resources>

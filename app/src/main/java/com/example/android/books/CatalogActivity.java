@@ -35,6 +35,8 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
      */
     private static final int BOOK_LOADER = 0;
 
+    ListView bookListView ;
+
     /**
      * Adapter for the ListView
      */
@@ -56,7 +58,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         });
 
         // Find the ListView which will be populated with the book data
-        ListView bookListView = findViewById(R.id.list);
+        bookListView = findViewById(R.id.list);
 
         // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
         View emptyView = findViewById(R.id.empty_view);
@@ -176,7 +178,9 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         String[] projection = {
                 BookEntry._ID,
                 BookEntry.COLUMN_BOOK_NAME,
-                BookEntry.COLUMN_BOOK_CATEGORY};
+                BookEntry.COLUMN_BOOK_CATEGORY,
+                BookEntry.COLUMN_BOOK_PRICE,
+                BookEntry.COLUMN_BOOK_QUANTITY};
 
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context
@@ -197,6 +201,17 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
     public void onLoaderReset(Loader<Cursor> loader) {
         // Callback called when the data needs to be deleted
         mCursorAdapter.swapCursor(null);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        // If this is a new book, hide the "Delete" menu item.
+        if (mCursorAdapter.getCount()==0) {
+            MenuItem menuItem = menu.findItem(R.id.action_delete_all_entries);
+            menuItem.setVisible(false);
+        }
+        return true;
     }
 
 }

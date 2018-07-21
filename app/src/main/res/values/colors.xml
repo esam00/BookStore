@@ -9,4 +9,17 @@
 
     <!-- Primary dark color for the editor -->
     <color name="editorColorPrimaryDark">#c0392b</color>
+
+    <!-- background color for circle quantity -->
+    <color name="color_quantity_circle">#2564a3</color>
+
+    <!-- text color of the book name in the list item  -->
+    <color name="color_book_name">#101418</color>
+
+    <!-- text color of the book category in the list item  -->
+    <color name="color_book_category">#202428</color>
+
+    <!-- text color of the book price in the list item  -->
+    <color name="color_book_price">#332936</color>
+
 </resources>

@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:orientation="vertical"
-            android:paddingLeft="4dp">
+            android:paddingLeft="@dimen/small_padding">
 
             <!-- Name field -->
             <EditText
@@ -33,7 +33,7 @@
                 android:hint="@string/hint_book_name"
                 android:inputType="textCapWords" />
 
-            <!-- Name field -->
+            <!-- category field -->
             <EditText
                 android:id="@+id/edit_book_category"
                 style="@style/EditorFieldStyle"
@@ -42,8 +42,8 @@
 
             <!-- Price field -->
             <RelativeLayout
-                android:layout_height="match_parent"
-                android:layout_width="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <EditText
                     android:id="@+id/edit_book_price"
@@ -54,16 +54,45 @@
                 <!-- Units for Price ($) -->
                 <TextView
                     android:id="@+id/label_weight_units"
-                    android:text="@string/units_book_price"
-                    style="@style/EditorUnitsStyle"/>
+                    style="@style/EditorUnitsStyle"
+                    android:text="@string/units_book_price" />
             </RelativeLayout>
 
             <!-- Quantity field -->
-            <EditText
-                android:id="@+id/edit_book_quantity"
-                style="@style/EditorFieldStyle"
-                android:hint="@string/hint_book_quantity"
-                android:inputType="number" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_book_quantity"
+                    style="@style/EditorFieldStyle"
+                    android:hint="@string/hint_book_quantity"
+                    android:inputType="number" />
+
+                <!-- Units for Price ($) -->
+                <TextView
+                    android:id="@+id/label_book_units"
+                    style="@style/EditorUnitsQuantityStyle"
+                    android:layout_toLeftOf="@+id/minus"
+                    android:text="@string/units_book_quantity" />
+
+                <ImageButton
+                    android:id="@+id/plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/ic_plus"
+                    android:paddingLeft="@dimen/small_padding" />
+
+                <ImageButton
+                    android:id="@+id/minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/plus"
+                    android:background="@drawable/ic_minus"
+                    android:paddingLeft="@dimen/small_padding" />
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -85,21 +114,34 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:orientation="vertical"
-            android:paddingLeft="4dp">
+            android:paddingLeft="@dimen/small_padding">
 
-                <!-- Supplier name field -->
-                <EditText
-                    android:id="@+id/edit_supplier_name"
-                    style="@style/EditorFieldStyle"
-                    android:hint="@string/hint_supplier_name"
-                    android:inputType="textCapWords" />
+            <!-- Supplier name field -->
+            <EditText
+                android:id="@+id/edit_supplier_name"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_supplier_name"
+                android:inputType="textCapWords" />
 
-                <!-- Supplier number field -->
+            <!-- Supplier number field -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
                 <EditText
                     android:id="@+id/edit_supplier_number"
                     style="@style/EditorFieldStyle"
                     android:hint="@string/hint_supplier_number"
                     android:inputType="number" />
+
+                <ImageButton
+                    android:id="@+id/call"
+                    android:layout_width="@dimen/ic_call_width"
+                    android:layout_height="@dimen/ic_call_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/ic_call" />
+            </RelativeLayout>
         </LinearLayout>
 
     </LinearLayout>

@@ -38,7 +38,9 @@ import com.example.android.books.data.BookContract.BookEntry;
 
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -87,6 +89,16 @@ public class EditorActivity extends AppCompatActivity implements
      * EditText field to enter the supplier phone number
      */
     private EditText mSupplierNumberEditText;
+
+    /**
+     * Button to increase quantity field by 1
+     */
+    private ImageButton mIncreaseQuantityButton;
+
+    /**
+     * Button to decrease quantity field by 1
+     */
+    private ImageButton mDecreaseQuantityButton;
 
     /**
      * Boolean flag that keeps track of whether the book has been edited (true) or not (false)
@@ -141,6 +153,27 @@ public class EditorActivity extends AppCompatActivity implements
         mSupplierNameEditText = findViewById(R.id.edit_supplier_name);
         mSupplierNumberEditText = findViewById(R.id.edit_supplier_number);
 
+        //add and subtract buttons
+        mIncreaseQuantityButton = findViewById(R.id.plus);
+        mDecreaseQuantityButton = findViewById(R.id.minus);
+
+        // calling supplier by using intent and parse the uri with phone number
+        ImageButton call = findViewById(R.id.call);
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String supplierNumber = mSupplierNumberEditText.getText().toString().trim();
+                if (!TextUtils.isEmpty(supplierNumber)) {
+
+                    String uri = "tel:" + supplierNumber;
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse(uri));
+                    startActivity(intent);
+                }
+            }
+        });
+
+
         // Setup OnTouchListeners on all the input fields, so we can determine if the user
         // has touched or modified them. This will let us know if there are unsaved changes
         // or not, if the user tries to leave the editor without saving.
@@ -150,6 +183,37 @@ public class EditorActivity extends AppCompatActivity implements
         mQuantityEditText.setOnTouchListener(mTouchListener);
         mSupplierNameEditText.setOnTouchListener(mTouchListener);
         mSupplierNumberEditText.setOnTouchListener(mTouchListener);
+
+        // increase the book quantity by one when pressing on the plus button
+        mIncreaseQuantityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int quantity = 0;
+                String quantityString = mQuantityEditText.getText().toString();
+                if (!TextUtils.isEmpty(quantityString)) {
+                    quantity = Integer.parseInt(quantityString);
+                }
+                quantity += 1;
+                mQuantityEditText.setText(String.valueOf(quantity));
+            }
+        });
+
+        // decrease the book quantity by one when pressing on the minus button
+        mDecreaseQuantityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int quantity = 0;
+                String quantityString = mQuantityEditText.getText().toString();
+                if (!TextUtils.isEmpty(quantityString)) {
+                    quantity = Integer.parseInt(quantityString);
+                }
+                if (quantity >= 2) {
+                    quantity -= 1;
+                }
+
+                mQuantityEditText.setText(String.valueOf(quantity));
+            }
+        });
 
     }
 
