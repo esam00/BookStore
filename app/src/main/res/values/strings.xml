@@ -100,4 +100,5 @@
     <string name="unknown_category">Unknown category</string>
     <string name="delete_all_books_dialog_msg">Are you sure you want to delete all books?</string>
     <string name="sale">sale</string>
+    <string name="fields_not_filled">some fields needs to be filled</string>
 </resources>

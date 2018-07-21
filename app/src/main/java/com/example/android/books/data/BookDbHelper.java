@@ -55,8 +55,5 @@ public class BookDbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // The database is still at version 1, so there's nothing to do be done here.
-        String SQL_DELETE_BOOKS_TABLE = "DROP TABLE IF EXISTS " + BookEntry.TABLE_NAME;
-        db.execSQL(SQL_DELETE_BOOKS_TABLE);
-        onCreate(db);
     }
 }
